@@ -1,0 +1,5 @@
+.gogradle
+.gradle
+.idea
+vendor
+*.zip

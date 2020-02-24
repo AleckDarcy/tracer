@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package trace;
+
+enum Type {
+    _ = 0;
+    Send = 1;
+    Receive = 2;
+}
+
+message Data {
+    Type type = 1;
+    int64 timestamp = 2;
+    string message_name = 3;
+
+    Data previous = 10;
+}
+
+message Chain {
+    int64 id = 1;
+    int64 depth = 2;
+    Data data = 3;
+
+    RLFI rlfi = 20;
+    TFI tfi = 21;
+}
+
+message RLFI {
+    string name = 1;
+}
+
+message TFI {
+    string name = 1;
+    repeated string after = 2;
+}

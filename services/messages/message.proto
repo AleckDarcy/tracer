@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package messages;
+import "trace/trace.proto";
+
+message RequestA {
+    Request body = 1;
+}
+
+message RequestB {
+    Request body = 1;
+}
+
+message RequestC {
+    Request body = 1;
+}
+
+message Request {
+    int64 id = 1;
+    string from = 2;
+    string to = 3;
+    trace.Chain trace = 10;
+}
+
+message ResponseA {
+    Response body = 1;
+}
+
+message ResponseB {
+    Response body = 1;
+}
+
+message ResponseC {
+    Response body = 1;
+}
+
+message Response {
+    int64 id = 1;
+    string from = 2;
+    string to = 3;
+    int64 status = 4;
+    trace.Chain trace = 10;
+}
